@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1.0in]{geometry}
+
+
+\title{A Review of M. M. Desai's and D. S. Fisher's "Beneficial Mutation-Selection Balance and the Effect of Linkage on Positive Selection"}
+\date{Fall 2016}
+\author{Kevin Gomez}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section*{INTRODUCTION}
+Desai and Fisher \cite{DesFish07} begin by noting that unlike neutral and deleterious mutations which have been studied in great detail, beneficial mutations and their dynamics are poorly understood in comparison despite their importance to long-term adapatation and genetic diversity at linked sites.  In their paper, Desai and Fisher examine beneficial mutations in clonal populations and develop a framework for mutation-selection balance.  
+
+In their introduction, two regimes for clonal populations are briely discussed, and each is determined by the rate of occurence of beneficial mutations.  The first of these is named the strong-selection weak-mutation regime and it is refered to as the \textit{successional regime}.  In this regime beneficial mutations are rare and the time between their occurrences is large in comparison to the the time needed for each beneficial mutation to fix in the the population.  This leads to a ruling population that is homogeneous in fitness. Moreover, alleles at linked sites of the beneficial mutations hitchike and fix as well.  Small to medium sizes populations often operate in this regime, mainly due to $NU_b \ll 1$ which results in beneficial mutations being generated very rarely. 
+
+The second is the strong-selection strong-mutation regime and it is referred to as the \textit{concurrent-mutations regime}. In this regime, beneficial mutations occur much more frequently, as is the case in larger populations sizes where $NU \gg 1$.  Selection is assumed to be strong and not dominated by drift.  Consequently, the time between occurrences of beneficial mutations is shorter than the time required for each to fix in the populations.  This results in the a situation where selective sweeps can overlap. This leads to what is know as clonal interference, whereby competing beneficial mutations within the population compete for fixation. Desai and Fisher point out clonal populations are known to operate in this regime, such as in some viral, bacterial and simple eukaryotic populations.  Desai and Fisher's article focuses on the clonal interference which occurs when clonal populations are in the concurrent mutations regime.  
+
+Beneficial mutations are needed to contribute to new genetic variation, while selection eliminates on standing variation.  Desai and Fisher point out the need to understand the interplay between selection and beneficial mutations as they affect the variation in the population, in particular the selection-mutation balance.  Some comments are made on the distinct regime where mutations are weakly beneficial, in which case drift dominates and impedes their fixation through selection.  This regime occurs in small populations, where drift is much stronger than selection, or when beneficial mutations have a very weak effect, such as in the case of synonymous codon usage.  Desai and Fisher choose to focus on the moderate to large populations in strong selection regimes where drift is only important for very small subpopulations.  The figure is discussed and a comparison is drawn between the successional and concurrent mutations regimes.  As mentioned previously, the successional case occurs in small populations sizes or when $U_b$ is small so that beneficial mutations are rare and their occurrences are seperated in time.
+
+In their model, they assume that the population size $N$ is constant.  They denote $U_b$ as the beneficial mutation rate and the fitness increase from each   mutation as $s$ (this is the log fitness).  The speed of evolution $v$ is $d\langle r \rangle / dt$ which is the rate of increase of average fitness in the population.  If the fittest mutant has advantage $ks$ over the mean, then the speed of evolution can be written as the $v=sd\langle k  / dt \rangle$.  
+
+Desai and Fisher proceed with a simple discussion of how mutants establish in the successional regime.  Beneficial mutations occur at total rate of $NU_b$, and a mutant and the probability for it to survive drift is proportional to $s$, provided $1/N<s<1$.  Establishment occurs if the beneficial mutation survives drift, which occurs roughly when the mutant subpopulation reaches size $1/s$.  The reasoning behind this is that for a lineage of size $n$, it takes roughly $n$ generations for drift to change the population size by $n$ individuals, while selection adds $n(1+s)^n-n \approx n^2s$.  Hence if $n^2s>n$, then selection dominates drift, which exactly states that $n>1/s$ is required in order for the mutant lineage to be safe from drift. 
+
+As a result, the mutant lineage will produce beneficial mutations that establish at a total rate of $NU_bs$ per generation, and thus, a new beneficial mutation will establish every $\tau_{establish} = 1/NU_bs$ generations.  Having reached the size $1/s$, the mutant lineage grows almost exponentially at rate $s$, which implies that the time until fixation is given by
+\[
+N={1 \over s}e^{s \tau_{fix}}.
+\]
+solving for the fixation time, we obtain $\tau_{fix}=ln(Ns)/s$ generations are required for the beneficial mutation to fix in the population.  
+\section*{SIMPLE MODEL}
+
+
+
+\section*{ANALYSIS}
+\subsection*{Fate of Single Mutatnt}
+The calculations for the generating function are given as follows. The for
+
+\begin{align*}
+g(n,1,t)={1\over 2+s}(2+s)dt \delta_{n,0} + {1+s\over 2+s}(2+s)dt g(n,2,t-dt)+[1-(2+s)dt] g(n,1,t-dt)
+\end{align*}
+\subsection*{Mutants generated by a changing population}
+
+\section*{TRANSIENT BEHAVIOR}
+\section*{DELETERIOUS MUTATIONS}
+\section*{SIMLULATIONS}
+\section*{DISTRIBUTION OF $s$, AND RELATIONSHIP TO CLONAL INTERFERENCE ANALYSIS}
+\section*{DISCUSSION}
+
+
+\section*{APPENDIX A: DETERMINISTIC AND MOMENT-BASED APPROACHES}
+\section*{APPENDIX B: VARIABLE N AND EFFECTIVE POPULATION SIZE}
+\section*{APPENDIX C: RUNNING OUT OF BENEFICIAL MUTATIONS}
+\section*{APPENDIX D: FLUCUATIONS IN $\tau$, VARIATIONS IN $v$, AND STABILITY OF THE STEADY STATE}
+\section*{APPENDIX E: ON THE CUTOFF IN THE INTEGRAL IN $H$ AND THE PATHOLOGIES OF $\langle n_q(t) \rangle$}
+\section*{APPENDIX F: MULTIPLE STOCHASTIC CLONES AND $U_b/s$}
+\section*{APPENDIX G: THE $\tau (t)$ APPROXIMATION}
+\section*{APPENDIX H: APPROXIMATIONS IN THE BEHAVIOR OF $q$}
+
+\bibliography{dfreview}
+\bibliographystyle{plain}
+\end{document}
+
