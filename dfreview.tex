@@ -66,11 +66,33 @@
 
 \newpage
 \section{Introduction}
+Desai and Fisher start off with framing the importance of their work in the context of understanding beneficial mutations, since they drive long term adaptation in populations.  Very little is understood about them (review some work from past theory and experiments, and the pitfalls in those experiments, especially work relevant to your own research) in comparison to the work on neutral and deleterious mutations (at this point I want to reference some well known scientific works on these two possibly, such as the neutral theory). 
+
+The focus of the paper is on describing the dynamics of adaptation due to beneficial mutations and positive selection in clonal populations with linkage (maybe you want to give more details about the what these translate into as assumptions and examples of at least some nearly clonal populations).  Moreover, some basic assumptions must be made about the parameters of the populations where this is applicable to and how adaptation actually works: parameters, bulk.  The model is constructed by through the appeal to a mutation selection balance which characterizes key parameters of the a traveling wave (definitely more needs to be said here).  
+
 \section{The Two Regimes}
+(Start with introducing the two regimes briefly, i.e why the distinction.  Provide their assumptions, behavior, and then conclude with the focus of the paper's model which is the concurrent mutations regime) The authors describe two important and apparently well know regimes, first of which is the successional regime characterized by strong selection weak mutation (what are the conditions for this regime?), and the concurrent mutation regime characterized by weak selection strong mutation (what are the conditions for this regime?).  
+%(INSERT MULLER DIAGRAM FROM DESAI AND FISHER AS REFERENCE)
+
+The strong selection weak mutation regime is characterized as rapid sweeps between longer periods of times between the appearance of beneficial mutations that fix in the population, which results in a relatively homogenous population w.r.t relative fitness (this merits a connection to your research in different kinds of fitness: see joanna's paper rcK). (We should just get some of the formal mathematics out of the way here and provide the basic estimates.  Don't derive them, so that they can ask you how you its derived in the exam.)
+
+In the concurrent mutation regime, where selection is weak and beneficial mutations occur frequently (or are common), i.e much more quickly than the time needed for fixation of beneficial mutations, there is clonal interference and the population is hetergeneous w.r.t subpopulations with respective relative fitness measures. Desai and fisher offer up examples that might be worth  
+
+In Desai and Fisher's paper, the focus is on the concurrent mutations regime in clonal populations, since the other is trivial.
+
 \section{Mutation-Selection Balance}
+Start of with making a connection between the clonal interference muller diagram to a brief description of the change in the nose and the change in the mean fitness of the population.  Here we also want to bare some of the consequences of our assumptions on the parameters, such as the splitting of the stochastic and the deterministic growth of subpopulations.  We also want to 
+
+Provide the details of the nose speed with specific mathematical estimates, derived from the basic estimates, and then follow it by explaining how Desai and Fisher verified it with the detailed work using stochastics.
+
+
 \section{Deleterious Mutations}
+
 \section{Accounting for Varying s}
+
 \section{Conclusion}
+
+\section*{Older writing snipets}
 Desai and Fisher \cite{DesFish07} begin by noting that unlike neutral and deleterious mutations which have been studied in great detail, beneficial mutations and their dynamics are poorly understood in comparison despite their importance to long-term adapatation and genetic diversity at linked sites.  In their paper, Desai and Fisher examine beneficial mutations in clonal populations and develop a framework for mutation-selection balance.  
 
 In their introduction, two regimes for clonal populations are briely discussed, and each is determined by the rate of occurence of beneficial mutations.  The first of these is named the strong-selection weak-mutation regime and it is refered to as the \textit{successional regime}.  In this regime beneficial mutations are rare and the time between their occurrences is large in comparison to the the time needed for each beneficial mutation to fix in the the population.  This leads to a ruling population that is homogeneous in fitness. Moreover, alleles at linked sites of the beneficial mutations hitchhike and fix as well.  Small to medium sizes populations often operate in this regime, mainly due to $NU_b \ll 1$ which results in beneficial mutations being generated very rarely. 
@@ -99,39 +121,6 @@ The successional regime occurs when beneficial mutations are rare
 %g(n,1,t)={1\over 2+s}(2+s)dt \delta_{n,0} + {1+s\over 2+s}(2+s)dt g(n,2,t-dt)+[1-(2+s)dt] g(n,1,t-dt)
 %\end{align*}
 
-\section*{Appendix: Key Pop Gen and Evolution Concepts}
-\begin{itemize}
-\item successional regime in small to midsize populations where beneficial mutations are rare due to
-	\begin{itemize} 
-	\item fewer births which cause beneficial mutations to rare (however could be counter acted by really high mutation rate).
-	\end{itemize}
-\end{itemize}
-
-\section*{Appendix: Glossary of Terms}
-\begin{itemize}
-\item neutral mutation:
-\item deleterious mutation:
-\item positive selection: is equivalent to directional selection, and is the favoring of one allele over another, or the favoring of a quantitative trait.
-\item successional regime: when beneficial mutations are rare, and their appearance is followed by a sweep.  This sweep occurs on relatively short time scales when compared to the time between establishements of beneficial mutations.
-\item linkage: a physical association between loci, such as those that form part of the same chromosome.
-\item linkage disequilibrium:  The non-random association of alleles at different loci.
-\end{itemize}
-
-\section*{Appendix: Questions}
-\begin{itemize}
-\item what are examples of studies on deleterious and neutral mutations that have lead to an understanding of genetic diversity?
-	\begin{itemize}
-	\item One candidate that comes to mind is Kimura's work that led to neutral theory (elaborate on this).
-	\end{itemize}
-\item What are some known mutation rates of various kinds of organisms?
-	\begin{itemize}
-	\item Give the estimated mutation rates from the LTEE experiments for ecoli.
-	\end{itemize}
-\item when does selection dominates drift?
-	\begin{itemize}
-	\item best guess is when $Ns \gg 1$ since this would imply that the timescale of drift $N$ is longer than the timescale of selection which is $1/s$.  However this needs to be looked at because this may not be the only determining factor.
-	\end{itemize}
-\end{itemize}
 \bibliography{dfreview}
 \bibliographystyle{plain}
 \end{document}
