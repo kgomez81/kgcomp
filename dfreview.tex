@@ -12,47 +12,18 @@
 \maketitle
 \newpage
 
-\section{Outline}
-\begin{enumerate}
-\item Introduction
-	\begin{enumerate}
-	\item DF's work in context
-	\item Mut-sel bal and linkage
-	\end{enumerate}
-\item Two regimes
-	\begin{enumerate}
-	\item what are the two regimes
-	\end{enumerate}
-\item The model for mutation-selection balance
-
-\item Deleterious mutations
-
-\item Accounting for a fitness distribution
-
-\item Conclusion
-\end{enumerate}
-
-
 %Writing Resources
 %https://academicskills.anu.edu.au/node/492
 
 \newpage
 \section{Introduction}
-Beneficial mutations drive long-terms adaptation, yet the processes that govern how populations acquire them are not as well understood as say deleterious and neutral mutations.  Only the simplest of cases have been understood through models 
+Our understanding of beneficial mutations and their dynamics is comparatively poorer than it is for neutral and deleterious mutations.  The detailed work carried out for the latter two has provided important insights into genetic diversity in populations and led to development of important tools to study and characterize key evolutionary processes in species.  Beneficial mutations play a much more fundamental role in the long-term adaptation of species, and also greatly influence the levels of genetic diversity at linked sites.  Unfortunately, our understanding of them limited to the simplest cases due to the complexity often involved in the biological scenarios where positive selection occurs.  This makes the work of Desai and Fisher and important contribution to the existing body of theoretical literature on beneficial mutations, and in particular, their detailed analysis provides a solid framework for modeling adaptation in asexual populations.  
+
+
+
 \section{The Simple Model}
-As
 
-\section{Mutation-Selection Balance}
-
-\section{Deleterious Mutations}
-
-\section{Varying s}
-
-\section{Conclusions and Future Work}
-
-
-\section*{Older writing snipets}
-Desai and Fisher \cite{DesFish07} begin by noting that unlike neutral and deleterious mutations which have been studied in great detail, beneficial mutations and their dynamics are poorly understood in comparison despite their importance to long-term adapatation and genetic diversity at linked sites.  In their paper, Desai and Fisher examine beneficial mutations in clonal populations and develop a framework for mutation-selection balance.  
+there are three parameters that determine the key behavior of adaptations in clonal populations, which are the population size $N$, the beneficial mutation rate $U_b$, and the selective advantage $s$.  What is 
 
 In their introduction, two regimes for clonal populations are briely discussed, and each is determined by the rate of occurence of beneficial mutations.  The first of these is named the strong-selection weak-mutation regime and it is refered to as the \textit{successional regime}.  In this regime beneficial mutations are rare and the time between their occurrences is large in comparison to the the time needed for each beneficial mutation to fix in the the population.  This leads to a ruling population that is homogeneous in fitness. Moreover, alleles at linked sites of the beneficial mutations hitchhike and fix as well.  Small to medium sizes populations often operate in this regime, mainly due to $NU_b \ll 1$ which results in beneficial mutations being generated very rarely. 
 
@@ -70,6 +41,23 @@ N={1 \over s}e^{s \tau_{fix}}.
 \]
 solving for the fixation time, we obtain $\tau_{fix}=ln(Ns)/s$ generations are required for the beneficial mutation to fix in the population.  
 The calculations for the generating function are given as follows. The for
+
+
+\section{Mutation-Selection Balance}
+
+\section{Deleterious Mutations}
+
+\section{Varying s}
+
+\section{Conclusions and Future Work}
+
+
+\section*{Older writing snipets}
+
+
+
+
+
 
 \section*{Appendix: Notes and Calculations}
 The focus of this paper is analyzing the dynamics of multiple mutations and their interplay in what is called clonal interference.  
