@@ -27,8 +27,10 @@ The second is the strong-selection strong-mutation regime, which occurs when the
 
 This second regime is the focus of the paper, starting with the simplest model, followed by an exploration of it's application to more complicated situations associated with the relaxation of certain assumptions.  Desai and Fisher's complete work is extensive and far reaching in its results, but I will limit myself to covering their simplest model, with only a subset of its extensions. 
 
-\subsection*{Mutation-Selection balance}
-The full analysis presented in Desai and Fisher are preceded by a heuristic analysis that provide insights into the full results later obtained.  This basic analysis starts with the same set of assumptions that are later adopted in the more careful approach taken, and consist of considering asexually reproducing populations with fixed population size $N$, that give rise to beneficial mutations at rate $U_b$ whose selective advantage is constant is $s$.  Additionally, it is assumed that that selection dominates drift requires that $1/N \ll s \ll 1$, and that deleterious mutations do not occur in the population. The former of these assumptions provides a separation of stochastic and deterministic behavior of fitness classes based on their size.  For a fitness class of size $n$, it takes random drift at least $n$ generations to decrease its size by $n$.  If the selective advantage of the subpopulation is $s$, then in $n$ generations its size will increase on average by approximately $n(1+s)^n-n \approx n^2s$.  Consequently, if $n^2s \ge n$, or equivalently $n>1/s$, then selection dominates.  Otherwise, drift dominates when $n\lq 1/s$, and it follows from the assumption $1/s \ll N$ that such smaller subpopulations are entirely dominated by drift and can be treated stochastically.
+\subsection*{The Central Idea Behind the Model}
+The full analysis presented in Desai and Fisher are preceded by a heuristic analysis that provide insights into the full results later obtained.  This basic analysis starts with the same set of assumptions that are later adopted in the more careful approach taken, and consist of considering asexually reproducing populations with fixed population size $N$, that give rise to beneficial mutations at rate $U_b$ whose selective advantage is constant is $s$.  Additionally, it is assumed that that selection dominates drift requires that $1/N \ll s \ll 1$, and that deleterious mutations do not occur in the population. 
+
+The former of these assumptions provides a separation of stochastic and deterministic behavior of fitness classes based on their size.  For a fitness class of size $n$, it takes random drift at least $n$ generations to decrease its size by $n$.  If the selective advantage of the subpopulation is $s$, then in $n$ generations its size will increase on average by approximately $n(1+s)^n-n \approx n^2s$.  Consequently, if $n^2s \ge n$, or equivalently $n>1/s$, then selection dominates.  Otherwise, drift dominates when $n\lq 1/s$, and it follows from the assumption $1/s \ll N$ that such smaller subpopulations are entirely dominated by drift and can be treated stochastically.
 
 In the successional regime, the one ruling class generates mutants at an average rate of $N U_b$.  Only a proportion of them are able to survive stochastic forces.  This proportion is given by the probability of fixation, which is proportional to $s$ and equal to $s$ in the case of Desai and Fisher's simple model.  Beneficial mutations that are able to overcome drift eventually give rise to subpopulations that grow to roughly the size of $1/s$, where selection then dominates and fixation of the fitness class subsequently follows.  In this scenario the beneficial mutation is said to establish.  It follows that the occurrence of beneficial mutations destined to establish follow a homogeneous Poisson process with mean rate rate $NU_b s$, and furthermore, the average time between establishments, denoted $\langle \tau_{est} \rangle$, is $\langle \tau_{est} \rangle = 1/(N U_b s)$.  Once a beneficial mutation establishes, the corresponding subpopulation grows exponentially at a rate of $s$.  Its growth in time is then approximately $n(t)\approx (1/s) e^{st}$, and implies that the time until fixation will be $\tau_{fix}$ for which $N =(1/s)e^{s \tau_{fix}}$.  Solving for the former provides $\tau_{fix} \approx ln(Ns)/s$.  The successional regime occurs when $\tau_{fix} \ll \tau_{est}$, which occurs when condition
 \[ N U_b \ll ln(Ns) \] 
@@ -36,7 +38,7 @@ is met for the parameter $N$, $U_b$ and $s$.
 
 The concurrent regime occurs when $\tau_{fix} \ge \tau_{est}$, and is characterized by the presence of multiple distinct fitness classes, which are in direct competition.  The fittest class, referred to as the nose, is the subpopulation that has not yet established and is still subject to stochastic forces.  Once a beneficial mutation establishes, a new nose subsequently forms.  The process repeats and leads to the progressive appearance of fitter classes that eventually establish and introduce variation in fitness into the population.  Selection on the other hand continuously removes this variation, which results in the population's mean fitness to increasing over time.  
 
-Selection and Mutations thus drive advancements of the population's mean fitness and nose, respectively.  These speed of the advancements are measured by the rate of increase, denoted $v$, and they are defined as the total gain in fitness divided by the associated mean time between advancements.  Both rates of increase driven by mutations and selection are determined by relative fitness gap $qs$ (discussed below).  Increases in $qs$ lead to increases in the rate of increase of both the nose in the mean fitness.  Mutation-selection balance is achieved when the two are equal, which determine specific values for the associated fitness gap $qs$ and speed of evolution $v$ at equilibrium. 
+Mutations and selection thus drive advancements of the population's mean fitness and nose, respectively.  These speed of the advancements are measured by the rate of increase, denoted $v$, and they are defined as the total gain in fitness divided by the associated mean time between advancements.  Both rates of increase driven by mutations and selection are determined by relative fitness gap $qs$ (discussed below).  Increases in $qs$ lead to increases in the rate of increase of both the nose in the mean fitness.  Mutation-selection balance is achieved when the two are equal, which determine specific values for the associated fitness gap $qs$ and speed of evolution $v$ at equilibrium. 
 
 Desai and Fisher provide heuristic estimates of the approximate values for both $q$ and $v$, which are roughly equal to those obtained from a more detailed analysis.  In particular the show that,
 \begin{align*}
@@ -48,7 +50,7 @@ One immediate insight that can be drawn from these expressions relates to the se
 
 result from their influence on distinct timescales.  The parameter $N$ is naturally associated these determines the timescales for selection and the the first being selection, and the second being the rate at which mutations destined to establish appear.  As a result, the expression for the speed of evolution $v$ correctly decompose the   
 
-\section{The Simplest Model}
+\section*{Detailed Analysis of the Concurrent Mutations Regime}
 The detailed analysis that is used to build up the full model begins by describing the first major component of the dynamics 
 Once this fitness class establishes, it grows exponentially as $n(t)=(1/qs)e^{(q-1)st}$ for a duration of time approximately equal to $ln(Nqs)/[(q-1)s/2]$, at which point it represents a substantial proportion of the total population.  This results in a change of mean fitness equal to  mean fitness has changed by  The fitness class class prior has a selective advantage of $qs$ over the populations mean fitness.
 
@@ -69,31 +71,20 @@ N={1 \over s}e^{s \tau_{fix}}.
 solving for the fixation time, we obtain $\tau_{fix}=ln(Ns)/s$ generations are required for the beneficial mutation to fix in the population.  
 The calculations for the generating function are given as follows. The for
 
+\subsection*{The Effect of Deleterious Mutations}
 
+\subsection*{Clonal Interference and Varying "s"}
 
+\subsection*{Conclusion}
 
-\section{Deleterious Mutations}
-
-\section{Varying s}
-
-\section{Conclusions and Future Work}
-
-
-\section*{Older writing snipets}
-
-
-
-
-
-
-\section*{Appendix: Notes and Calculations}
-The focus of this paper is analyzing the dynamics of multiple mutations and their interplay in what is called clonal interference.  
-
-The successional regime occurs when beneficial mutations are rare
-
-%\begin{align*}
-%g(n,1,t)={1\over 2+s}(2+s)dt \delta_{n,0} + {1+s\over 2+s}(2+s)dt g(n,2,t-dt)+[1-(2+s)dt] g(n,1,t-dt)
-%\end{align*}
+%\section*{Appendix: Notes and Calculations}
+%The focus of this paper is analyzing the dynamics of multiple mutations and their interplay in what is called clonal interference.  
+%
+%The successional regime occurs when beneficial mutations are rare
+%
+%%\begin{align*}
+%%g(n,1,t)={1\over 2+s}(2+s)dt \delta_{n,0} + {1+s\over 2+s}(2+s)dt g(n,2,t-dt)+[1-(2+s)dt] g(n,1,t-dt)
+%%\end{align*}
 
 \bibliography{dfreview}
 \bibliographystyle{plain}
