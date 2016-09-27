@@ -59,7 +59,81 @@ The detailed analysis leading to a careful description of $n_q(t)$ provides a wa
 \begin{equation} 
 \langle \tau \rangle = \frac{1}{(q-1)s}ln\left(\frac{s}{U_b}\frac{(q-1)sin(\pi/q)}{\pi^{\gamma/q}}\right)
 \end{equation}
-In steady state, the mean fitness increases by $s$ in the average establishment time $\langle \tau \rangle$, is also the average rate of increase of the population's mean fitness is the expected establishment time $\tau_q$.  Once $n_q(t)$ reaches size $1/qs$ and establishes, its growth becomes more and more deterministic due to selection.  For very large $t$, $n_q(t)$ is nearly deterministic and can be written as $n_q(t)= (1/qs)e^{qs(t-\tau)}$, where $tau$ is a time dependent stochastic variable.   
+In steady state, the corresponding $q$ can be solved for by tracking the growth over time of a fitness class beginning at the nose.  The mean fitness increases by $s$ in the average establishment time $\langle \tau_q \rangle$.  Once the nose establishes, the corresponding fitness class grows at the rate of $(q-1)s$ until the next establishment, assuming that $q>2$ to ensure that growth does not slow due to saturation.  At that point the mean has increase again by $s$, and the rate of growth is diminished to $(q-2)s$ for another $\langle \tau_q \rangle$ until the next establishment.  This continues until this same class becomes the largest fitness class of size approximately equal to $N$, which occurs in a time span of $(q-1) \langle \tau_q \rangle$.
+\begin{equation}
+N \approx \frac{1}{qs} \prod_{i=1}^{(q-1)} e^{is \langle \tau_q \rangle}  = \frac{1}{qs} exp\left[ \frac{q(q-1)s \langle \tau_q \rangle}{2}\right]  
+\end{equation}
+In this expression we may substitute in for $\langle \tau_q \rangle$ to obtain an transcendental equation in $q$, which can be solved using iterations.  A simple zeroth order approximation of $q$ can be used to solve for its dependence on the parameters, and an estimate of rate of evolution $v$. The expressions that follow are identical to those obtained in the heuristic analysis.
+\begin{equation}
+\begin{aligned}
+q \approx & {2ln[Ns] \over ln[s/U_b]} \\   
+\\
+v \approx & s^2 \left[{2ln[Ns] - ln[s/U_b] \over ln^2[s/U_b]}\right]
+\end{aligned}
+\end{equation} 
+The resulting steady state rate of evolution $v$ bears a relationship to the fitness distribution of the bulk, that follows the Fisher's fundamental theorem of natural selection.  The growth and decline of a fitness classes over a time period of $\tau_q$ (omitting the brackets from her on), follow the description above, and hence its growth (or decline) is exponential with a rate dependent that depends on how many more (or less) mutations it has above (or below) the mean.  If a particular fitness class has $l$ mutations  more (or less) than the mean, its size will be approximately $N \exp[-\sum_{i=1}^{l} \tau_q] \sim N \exp[(\tau_q/2s)(ls)^2]$.  The variance of this Gaussian fitness distribution, is $\sigma^2 = (s/\tau_q)=v$ which is the rate of evolution.  Furthermore, since the above indicates that $N \exp[(qs)^2/2\sigma^2]\approx (1/qs)$, it follows that $v=\sigma^2 \approx (qs)^2/2ln(Ns)$.  The magnitude of the lead is the key measure of the fitness distribution's width, and the equality between $v$ and $\sigma^2$ follows specifically from their relationship to the lead.
+
+\subsection*{The Effect of Deleterious Mutations}
+The simple model with a single $s$ does not incorporate the occurrence of deleterious mutations, which can impact the dependence of $v$ on the mutation rate and population size.  In their analysis, deleterious mutations with effects $s_d$ that vary in size are considered in the framework of the simple model with a single $s$ model.  Two ranges of fitness effects are examined, but in both cases, the contributions to the dynamics of the bulk and the nose act in opposition with respect to the changes they induce on their rates of increase.   
+
+In the first range of deleterious effects corresponding to $s_d \geq s$, with mutation rate $U_d^{>}$, a qualitative analysis reveals the fitness distribution of the bulk changes, but the steady state $v$ remains unaffected.  Deleterious mutations lower the mean fitness of the population by $U_d^{>}$ through its effects on the largest subpopulation.  Since $s_d \geq s$, mutation-selection balance for deleterious mutations is achieved on a time scale $1/(s_d +U_d^{>}) < 1/s$.  At this equilibrium, the frequency of deleterious mutants is $U_d^{>}/s_d$ with relative fitness $0$ and the unaffected portion is $(1-U_d^{>}/s_d)$ with relative fitness $-s_d$, and hence the new mean is $-s_d (U_d^{>}/s_d) = -U_d^{>}$.  This increases the lead of the nose by that amount, and consequently its growth by the same amount.  At the nose, deleterious mutations occurring at rate $U_d^{>}$ simply decrease the rate of growth of mutant lineages the nose by that amount.  The two effect cancel out as a result, and the speed of evolution $v$ remains mostly unchanged.
+
+In the range of $s_d$ corresponding to weakly deleterious mutations for which $s_d\ll s$ and having mutation rate $U_d^{<}$, the effects on $v$ are not as simple as before.  The gain fitness will no longer be simple $s$, but rather $s$ minus an amount corresponding to the load created by these deleterious mutations and dependedn on size $U_d^{<}$.  When $(U_d^{<} / qs)ln(s/U_b) <<1$, then the load created at the nose is (Ud< sd /(q-1)s)ln(s/Ub) which is significantly smaller then “s”, which reduces the effective “s” by roughly the amount of the load.
+If  Ud< / s >>1, a similar calculation can be used to show that the load reduces the effective “s” by an amount on the order sd which is still smaller than “s”.
+The net effect on the bulk is the same for the case of weakly deleterious mutations, however since 1/s < 1/sd then the small mutations start to accumulate throughout the sweep time, qs/v ≈ ln(s/Ub)/s, and reduces the mean fitness by at most Ud< which again speeds up evolution and partially cancels out the effects at the nose.
+The precise effects on “v” in this more complicated case are not precisely given as in the first case where  sd > s, and require more detail analysis in future work.
+
+
+
+Beginning with the impact of these mutations on the nose, new mutants extending the nose can arise in those having one or many deleterious mutations. However, such cases .  This reduces the effective $s$ The total effect is a reduction in the mean fitness equal the Tin the bulk, which achieves mutation selection balance from from deleterious mutation's contributions on timescales that are much shorter 1/s generation after it ceases to be the largest subpopulations.
+The after mutation-selection balance is reached, the distribution of the bulk is altered.  This occurs in 1/√(sd2+Ud>2) generations prior to transition leading to the next fittest class dominating the bulk, and the mean fitness is reduced by Ud>, which speeds up the growth of the nose through an increase in the lead by the deleterious mutation rate.
+At the nose, the growth of the of subpopulations is reduced by Ud> since individuals with such mutations do not contribute due to loss of fitness.
+The net effects of mutations for which sd > s cancel out and hence do not affect “v” but they do affect the shape of the bulk's distribution and increase the lead “qs”.
+ c) For weakly deleterious mutations where sd << s, the mutation rate Ud< affects the rate of evolution “v”
+Deleterious mutations at the nose do not reduce the chances establishment significantly of individuals possessing them, but in face very likely lead to less than s gains (s-sd or s-2sd) gains.
+If Ud< / s <<1, then the load created at the nose is (Ud< sd /(q-1)s)ln(s/Ub) which is significantly smaller then “s”, which reduces the effective “s” by roughly the amount of the load.
+If  Ud< / s >>1, a similar calculation can be used to show that the load reduces the effective “s” by an amount on the order sd which is still smaller than “s”.
+The net effect on the bulk is the same for the case of weakly deleterious mutations, however since 1/s < 1/sd then the small mutations start to accumulate throughout the sweep time, qs/v ≈ ln(s/Ub)/s, and reduces the mean fitness by at most Ud< which again speeds up evolution and partially cancels out the effects at the nose.
+The precise effects on “v” in this more complicated case are not precisely given as in the first case where  sd > s, and require more detail analysis in future work.
+
+
+\subsection*{Clonal Interference and Varying "s"}
+The simple model, which assumes that beneficial mutations all have the same effect size, can be used to examine evolution in the concurrent mutation regime for a setting where beneficial mutations have varying effect sizes.
+ a) The occurrences of small effect mutations leads to additional wasted beneficial mutations through clonal interference, where in these small effect beneficial mutations are out-competed by large effect ones.  
+ b) The application of Garrish and Lenski's (1998) analysis which derives a minimal effect size sci which fixes in the wild type, and leads to a successional mutation behavior.
+The dependence of sci on the population size N following Garrish and Lenski's analysis provides ln[1/Ub p(sci)]≈ln[Nsci] (p(s) is distribution of fitness effects “s”), which makes a crucial and incorrect assumption in which double mutants do not occur, and results in incorrect predictions.
+Populations large enough for clonal interference to matter are also large enough for bound mutants to repeatedly appear.  Clonal interference can affect the fixation of a mutation of size s only when the establishment rate of  mutations stronger than s, which is atleast NUd>s >> 1/ln(Ns) indicating that clonal interference will play a role, then so too will mutltiple mutations (above is roughly the condition for concurrent mutations = multiple mutations). 
+ c) Clonal interference and multiple mutations interact to produce a predominant range of fitness effects of roughly magnitude with mutation rate , and they accumulate in process similar to the single “s” model.
+In an initially clonal population, there will be a fittest mutant that is established in wild type population prior to the fixation of any other mutation of combination of mtuations, which will drive all other prior mutations to extinction.  These are call predominant mutations in the range of somewith mutation rate .
+The clonal-like-interference balanced with multiple mutation produce the predominant “s” due to the fact that for smaller fitness increments s are outcompeted by predominant mutants, and do not affect long term evolution, while larger “s” are too rare to occur in the time that one or predominant mutations arise. 
+Both  with mutation rate  depend on N and Ub as in the clonal interference analysis, but also must depend on the effects of multiple mutations.  This dependence is determined by p(s) and lead to two possibilities, excluding when the decay in p(s) ~ 1/s^3  or less.
+Specifically, a class of distributions where is a characteristic selection coefficient, l controls the mutation rate and determines the shape of the distribution of rare large mutations.
+Once, a the predominant range is determined, the predominant-s approximation of v(s) can be obtained when a narrow range of around exists, by setting v*~= max v(s) = , where v(s) is obtained from the velocity estimations from the single s model.
+ b) Short-tailed for which leads to an dependence on N and Ub which is determined by  the size of , where , but can provide estimates of .
+When , we should obtain a “q” that allows for the application of (41), which provides an estimate  from maximizing v(s) providing (58), and gives s that is roughly independent of N and Ub, where .  
+We also get that does not depend strongly on N, but it does increase as Ub increases, following from the fact that Ub leads to more multiple mutations become more important than single large mutations, which requires to grow.
+This leads to identical dependence on N but weaker dependence on Ub in v(s).
+Not so large L, will lead to more complicated behavior due to some s crossing over into regime where so large q results becomes inconsistent.
+ b) Long tailed , for which 
+In the large limit 2L/l the estimates for , , and , indicates that v(s) grows faster than linearly in ln(N), but the dependence on Ub is negligible, but does determine how large N must be, while q is never really large for long-tailed because  increases substantially with N.  In short tailed case, multiple mutations matter and contribute.
+When, q<2 (but sticks to 2), and leads to successional behavior for which which agrees with estimate of v(s) obtained for , and for this range, the clonal-interference estimate agree with this result, i.e. when applying clonal interference analysis with .  
+For , the clonal interference has the correct behavior but the incorrect coefficient, but the application of clonal interference does not give the correct scaling with L.  It can be improved if the establishment rate is replaced with the fixation rate (not clear why).
+ c) The width of the range around where v(s) is no less than a factor of 2 of is also of order , i.e. specifically between and , which indicates that application of the single s model is valid.
+
+
+\subsection*{Conclusion}
+
+%\section*{Appendix: Notes and Calculations}
+%The focus of this paper is analyzing the dynamics of multiple mutations and their interplay in what is called clonal interference.  
+%
+%The successional regime occurs when beneficial mutations are rare
+%
+%%\begin{align*}
+%%g(n,1,t)={1\over 2+s}(2+s)dt \delta_{n,0} + {1+s\over 2+s}(2+s)dt g(n,2,t-dt)+[1-(2+s)dt] g(n,1,t-dt)
+%%\end{align*}
+
+
+by using the average establishment time $\langle \tau_q \rangle$ until it becomes the dominant fitness class.   the mean fitness increases by $s$ in the average establishment time $\langle \tau \rangle$, which allows us to solve for $q$ by tracking the growth of .  Once $n_q(t)$ reaches size $1/qs$ grows deterministically at the rate $(q-1)$.  For very large $t$, $n_q(t)$ is nearly deterministic and can be written as $n_q(t)= (1/qs)e^{qs(t-\tau)}$, where $tau$ is a time dependent stochastic variable.   
 
 the At even larger time scales, such that $st\gg 1$ (FIX THIS), $n_q(t)$ is approximately deterministic.  However, for such large $t$, the stochasticity contributions impact the deterministic growth by altering the time for which it appears that $n_q(t)$ reached size $1/qs$ by some factor $\tau$.  Letting $\tau_q$ be the limit of $\tau$ as $t \rightarrow \infty$, then  In particular, since in the stochastic phase, which is where the primary contribution of stochasticity occurs, growth until the transition in the deterministic phase due to the influx of mutants from the subpopulation $n_{q-1}(t)$, the random variable $tau$ captures the stochasticity such that it will make the later deterministic behavior
 
@@ -83,22 +157,6 @@ N={1 \over s}e^{s \tau_{fix}}.
 \]
 solving for the fixation time, we obtain $\tau_{fix}=ln(Ns)/s$ generations are required for the beneficial mutation to fix in the population.  
 The calculations for the generating function are given as follows. The for
-
-\subsection*{The Effect of Deleterious Mutations}
-
-\subsection*{Clonal Interference and Varying "s"}
-
-\subsection*{Conclusion}
-
-%\section*{Appendix: Notes and Calculations}
-%The focus of this paper is analyzing the dynamics of multiple mutations and their interplay in what is called clonal interference.  
-%
-%The successional regime occurs when beneficial mutations are rare
-%
-%%\begin{align*}
-%%g(n,1,t)={1\over 2+s}(2+s)dt \delta_{n,0} + {1+s\over 2+s}(2+s)dt g(n,2,t-dt)+[1-(2+s)dt] g(n,1,t-dt)
-%%\end{align*}
-
 \bibliography{dfreview}
 \bibliographystyle{plain}
 \end{document}
